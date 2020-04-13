@@ -1,0 +1,38 @@
+﻿@model RegistrationViewModel
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Summary</title>
+</head>
+<body>
+    <form asp-action="UserDetails" asp-controller="Home">
+
+
+        <h1>Hello, @Model.FirstName!</h1>
+
+        @Html.ActionLink(
+        linkText: "Click Here to View Your Information",
+        actionName: "UserDetails",
+        controllerName: "Home",
+        routeValues: new
+        {
+            Model.FirstName,
+            Model.LastName,
+            Model.City,
+            Model.State,
+            Model.Username
+},
+htmlAttributes: null
+)
+
+       
+    </form>
+</body>
+   
+
+</html>
